@@ -1,0 +1,40 @@
+public class fibonacci {
+    public static long fib(int n){
+        int x=0,y=1,z;
+        for(int i=0;i<=n;i++){
+            if(i==n){
+                break;
+            }
+            else
+            {
+                z=x;
+                x=y;
+                y=x+z;
+            }
+        }
+        return x;
+    }
+    public static int doTestPass(){
+        int x;
+        boolean result=true;
+        result=result && fib(0)==0;
+        result=result && fib(1)==1;
+        result=result && fib(2)==1;
+        result=result && fib(10)==55;
+        result=result && fib(40)==102334155;
+
+        if(result){
+            System.out.println("all test pass");
+            x=1;
+        }
+        else{
+            System.out.println("there are test failure");
+            x=0;
+        }
+        return x;
+    }
+
+    public static void main(String[] args) {
+        doTestPass();
+    }
+}
