@@ -1,0 +1,40 @@
+public class SquareProblem {
+	
+
+		public static double squareRoot(double num) {
+			double t;
+			double st=num/2;
+			do {
+				t=st;
+				st=(t+(num/t))/2;
+			}
+			while((t-st)!=0);
+			return st;
+			
+		
+		}
+	     public static boolean doTestPass()
+	  {
+	   //Implement the following test caes.Add more test cases if possible.
+	  double[] inputs={2,4,100};
+	  double[] expected_value={1.41421,2,10};
+	    double threshold=0.001;
+	    for(int i=0;i<inputs.length;i++)
+	    {
+	    if(Math.abs(squareRoot(inputs[i])-expected_value[i])>threshold)
+	                {System.out.printf("test failed for %f expected_value=%f;actual=%f\n",inputs[i],expected_value[i],squareRoot(inputs[i]));
+	                                   return false;
+	    }
+
+	  }
+	    System.out.println("All tests passed");
+	                                   return true;
+	  }
+	public static void main(String[] args) {
+	  doTestPass();
+	  }
+
+
+	}
+
+
