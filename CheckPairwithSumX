@@ -1,0 +1,23 @@
+//Given an array A[] and a number x, check for pair in A[] with sum as x
+import java.util.*;
+import java.util.HashSet;
+public class CheckPairWithSumX {
+	 static void printpair(int a[],int sum) {
+		 
+		 HashSet<Integer> s=new HashSet<Integer>();
+		 for(int i=0;i<a.length;i++) {
+			 int temp=sum-a[i];
+			 
+			 if(s.contains(temp)) {
+				 System.out.println("Pair with given sum"+sum+"is"+"("+a[i]+","+temp+")");
+			 }
+			 s.add(a[i]);
+		 }
+	 }
+	 public static void main(String args[]) {
+		 int a[]= {16,10,6,5,3,8};
+		 int n=16;
+		 printpair(a,n);
+	 }
+
+}
