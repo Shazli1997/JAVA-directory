@@ -1,0 +1,43 @@
+//Move Zero to Last
+package com.practice.coding;
+
+public class MoveZero {
+	public void printArray(int[] arr)
+	{
+		int n=arr.length;
+		for(int i=0;i<n;i++)
+		{
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+	}
+	public void moveZero(int[] arr,int n)
+	{
+		int j=0;
+		for(int i=0;i<n;i++)
+		{
+			if(arr[i]!=0 && arr[j]==0)
+			{
+				int temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+			}
+			if(arr[j]!=0)
+			{
+				j++;
+			}
+		}
+	}
+	public static void main(String args[])
+	{
+		MoveZero arrUtil=new MoveZero();
+		arrUtil.arrDemo();
+	}
+	public void arrDemo() {
+		int arr[]= {8,0,0,1,0,7,6,5,4};
+		printArray(arr);
+		moveZero(arr,arr.length);
+		printArray(arr);
+	}
+
+}
